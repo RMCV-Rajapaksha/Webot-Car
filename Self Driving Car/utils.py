@@ -71,9 +71,9 @@ def get_model(folder, model_id, verbose=True):
 
 
 def preprocess_images(images):
-    # Convert from integers to floats
+    # Convert from integers to floats . Image data is often stored as integers (e.g., uint8) in the range [0, 255].
     images_norm = images.astype("float32")
-    # Normalize
+    # Normalize get data raange in to [0,1]
     images_norm = images_norm / 255.0
 
     return images_norm
